@@ -39,13 +39,7 @@ class LineChartScreen extends React.Component {
       update(this.state, {
         data: {
           $set: {
-            dataSets: [{
-              values: [{x: 4, y: 135}, {x: 5, y: 0.88}, {x: 6, y: 0.77}, {x: 7, y: 105}], label: 'A',
-            }, {
-              values: [{x: 4, y: 105}, {x: 5, y: 90}, {x: 6, y: 130}, {x: 7, y: 100}], label: 'B',
-            }, {
-              values: [{x: 4, y: 110}, {x: 5, y: 110}, {x: 6, y: 105}, {x: 7, y: 115}], label: 'C',
-            }],
+            dataSets: [],
           }
         }
       })
