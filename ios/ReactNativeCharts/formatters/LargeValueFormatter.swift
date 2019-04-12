@@ -33,15 +33,20 @@ open class LargeValueFormatter: NSObject, IValueFormatter, IAxisValueFormatter
         var sig = value
         var length = 0
         let maxLength = suffix.count - 1
-        
         while sig >= 1000.0 && length < maxLength
         {
             sig /= 1000.0
             length += 1
         }
-        
-        var r = String(format: "%2.f", sig) + suffix[length]
-        
+        var r = ""
+        if floor(sig) == sig {
+          r = String(format: "%2.f", sig) + suffix[length]
+        }else{
+          r = String(format: "%2.1f", sig) + suffix[length]
+        }
+        if sig == 0 {
+          r = String(0)
+        }
         if appendix != nil
         {
             r += appendix!
